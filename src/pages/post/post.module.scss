@@ -1,1 +1,89 @@
-// TODO
+.bannerContainer {
+  height: 400px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  > img {
+    max-height: 100%;
+    max-width: 100%;
+  }
+}
+
+.container {
+  max-width: 720px;
+  margin: 5rem auto 0;
+}
+
+.post {
+  h1 {
+    color: var(--white);
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .postInfo {
+    display: flex;
+    align-items: center;
+    margin-top: 1.5rem;
+
+    svg {
+      width: 15px;
+      height: 15px;
+      margin-right: 0.5rem;
+    }
+
+    span {
+      margin-left: 1.6rem;
+    }
+  }
+
+  span.esitionDate {
+    margin-top: 1rem;
+    display: block;
+    font-style: italic;
+    font-size: 0.8rem;
+    color: var(--info);
+  }
+
+  .postContent {
+    > h2 {
+      color: var(--white);
+      font-size: 1.75rem;
+      margin: 2rem 0 1rem;
+    }
+  }
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--border);
+
+  h3 {
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+
+  a {
+    color: var(--rose);
+    font-weight: 600;
+  }
+
+  div {
+    padding-top: 3rem;
+  }
+
+  div + div {
+    text-align: right;
+  }
+}

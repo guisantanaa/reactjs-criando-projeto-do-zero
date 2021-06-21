@@ -1,1 +1,14 @@
-// TODO
+.headerContainer {
+  height: 5rem;
+  display: flex;
+  border-bottom: 1px solid var(--border);
+
+  > a {
+    max-height: 720px;
+    height: 6rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+  }
+}
