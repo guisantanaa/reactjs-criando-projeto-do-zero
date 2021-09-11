@@ -1,12 +1,16 @@
 import { Fragment } from 'react';
+import { useRouter } from 'next/router';
 import { FiCalendar, FiUser, FiClock } from 'react-icons/fi';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { useRouter } from 'next/router';
-import Prismic from '@prismicio/client';
 import PrismicDOM from 'prismic-dom';
+import Prismic from '@prismicio/client';
 import Link from 'next/link';
+
 import { getPrismicClient } from '../../services/prismic';
+
 import Header from '../../components/Header';
+import Comments from '../../components/Comments';
+
 import { formattedDate } from '../../utils/formatersPrismic';
 import styles from './post.module.scss';
 import commonStyles from '../../styles/common.module.scss';
@@ -129,7 +133,17 @@ export default function Post({
               </Link>
             </div>
           )}
+
+          {navigation?.nextPost.length > 0 && (
+            <div>
+              <h3>{navigation.prevPost[0].data.title}</h3>
+              <Link href={`/post/${navigation.nextPost[0].uid}`}></Link>
+              <a>Próximo post</a>
+            </div>
+          )}
         </section>
+
+        <Comments />
 
         {preview && (
           <aside>
